@@ -12,9 +12,21 @@ namespace SistemaCadastro
 {
     public partial class Form1 : Form
     {
+        List<Pessoa> pessoas;
+
+
         public Form1()
         {
             InitializeComponent();
+
+            pessoas = new List<Pessoa>();
+
+            comboEC.Items.Add("Casado");
+            comboEC.Items.Add("Solteiro");
+            comboEC.Items.Add("Viuvo");
+            comboEC.Items.Add("Separado");
+
+            comboEC.SelectedIndex = 0;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,5 +48,95 @@ namespace SistemaCadastro
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+            int index = -1;
+
+
+            foreach(Pessoa p in pessoas) 
+            {
+                if(p.Nome == txtNome.Text)
+                {
+                    index = pessoas.IndexOf(p);
+                }
+            }
+
+            if (txtNome.Text == "")
+            {
+                MessageBox.Show("Preencha o campo nome.");
+                txtNome.Focus();
+            }
+
+            if (txtTelefone.Text == "")
+            {
+                MessageBox.Show("Preencha o campo telefone.");
+                txtTelefone.Focus();
+            }
+
+            char sexo;
+
+            if (radioM.Checked) 
+            {
+                sexo = 'M';
+            }
+
+            else if (radioF.Checked)
+            {
+                sexo = 'F';
+            }
+
+            else 
+            {
+                sexo = 'O';
+            }
+
+            Pessoa p1 = new Pessoa();
+            p1.Nome = txtNome.Text;
+            p1.DataNascimento = txtData.Text;
+            p1.EstadoCivil = comboEC.SelectedItem.ToString();
+            p1.Telefone = txtTelefone.Text;
+            p1.CasaPropria = checkCasa.Checked;
+            p1.Veiculo = checkVeiculo.Checked;
+            p1.Sexo = sexo;
+
+            if (index < 0)
+            {
+                pessoas.Add(p1);
+            }
+            else
+            {
+                pessoas[index] = p1;
+            }
+
+            
+            btnLimpar_Click(btnLimpar, EventArgs.Empty);
+
+            Listar();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Listar() 
+        {
+            lista.Items.Clear();
+
+            foreach(Pessoa p in pessoas)
+            {
+                lista.Items.Add(p.Nome);
+            }
+
+
+        }
+
     }
 }

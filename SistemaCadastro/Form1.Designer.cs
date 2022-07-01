@@ -39,9 +39,9 @@
             this.checkCasa = new System.Windows.Forms.CheckBox();
             this.checkVeiculo = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioM = new System.Windows.Forms.RadioButton();
-            this.radioF = new System.Windows.Forms.RadioButton();
             this.radioO = new System.Windows.Forms.RadioButton();
+            this.radioF = new System.Windows.Forms.RadioButton();
+            this.radioM = new System.Windows.Forms.RadioButton();
             this.lista = new System.Windows.Forms.ListBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -157,16 +157,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sexo";
             // 
-            // radioM
+            // radioO
             // 
-            this.radioM.AutoSize = true;
-            this.radioM.Location = new System.Drawing.Point(7, 20);
-            this.radioM.Name = "radioM";
-            this.radioM.Size = new System.Drawing.Size(73, 17);
-            this.radioM.TabIndex = 0;
-            this.radioM.TabStop = true;
-            this.radioM.Text = "Masculino";
-            this.radioM.UseVisualStyleBackColor = true;
+            this.radioO.AutoSize = true;
+            this.radioO.Location = new System.Drawing.Point(7, 68);
+            this.radioO.Name = "radioO";
+            this.radioO.Size = new System.Drawing.Size(51, 17);
+            this.radioO.TabIndex = 2;
+            this.radioO.TabStop = true;
+            this.radioO.Text = "Outro";
+            this.radioO.UseVisualStyleBackColor = true;
             // 
             // radioF
             // 
@@ -179,16 +179,17 @@
             this.radioF.Text = "Feminino";
             this.radioF.UseVisualStyleBackColor = true;
             // 
-            // radioO
+            // radioM
             // 
-            this.radioO.AutoSize = true;
-            this.radioO.Location = new System.Drawing.Point(7, 68);
-            this.radioO.Name = "radioO";
-            this.radioO.Size = new System.Drawing.Size(51, 17);
-            this.radioO.TabIndex = 2;
-            this.radioO.TabStop = true;
-            this.radioO.Text = "Outro";
-            this.radioO.UseVisualStyleBackColor = true;
+            this.radioM.AutoSize = true;
+            this.radioM.Checked = true;
+            this.radioM.Location = new System.Drawing.Point(7, 20);
+            this.radioM.Name = "radioM";
+            this.radioM.Size = new System.Drawing.Size(73, 17);
+            this.radioM.TabIndex = 0;
+            this.radioM.TabStop = true;
+            this.radioM.Text = "Masculino";
+            this.radioM.UseVisualStyleBackColor = true;
             // 
             // lista
             // 
@@ -202,31 +203,33 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(18, 480);
+            this.btnCadastrar.Location = new System.Drawing.Point(22, 479);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(201, 58);
             this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Cadastrar/Alterar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(303, 480);
+            this.btnExcluir.Location = new System.Drawing.Point(307, 479);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(201, 58);
             this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(588, 480);
+            this.btnLimpar.Location = new System.Drawing.Point(581, 479);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(201, 58);
+            this.btnLimpar.Size = new System.Drawing.Size(199, 58);
             this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.button1_Click);
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // Form1
             // 
