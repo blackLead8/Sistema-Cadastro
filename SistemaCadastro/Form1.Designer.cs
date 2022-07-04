@@ -124,6 +124,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(302, 31);
             this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtTelefone_MaskInputRejected);
             // 
             // checkCasa
             // 
