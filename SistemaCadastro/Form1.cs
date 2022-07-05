@@ -155,5 +155,37 @@ namespace SistemaCadastro
 
         }
 
+        private void lista_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int indice = lista.SelectedIndex;
+            Pessoa p = pessoas[indice];
+
+            txtNome.Text = p.Nome;
+            txtData.Text = p.DataNascimento;
+            comboEC.SelectedItem = p.EstadoCivil;
+            txtTelefone.Text = p.Telefone;
+            checkCasa.Checked = p.CasaPropria;
+            checkVeiculo.Checked = p.Veiculo;
+            char sexo = p.Sexo;
+            switch (p.Sexo)
+            {
+                case 'M':
+                    radioM.Checked = true;
+                    break;
+                case 'F':
+                    radioF.Checked = true;
+                    break;
+                default:
+                    radioO.Checked = true;
+                    break;
+            }
+         
+            
+
+            
+            
+
+        }
+
     }
 }
